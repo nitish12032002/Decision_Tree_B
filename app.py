@@ -20,7 +20,7 @@ X = dataset.iloc[:, [1,2,3]].values
 from sklearn.preprocessing import LabelEncoder
 labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
-def predict_note_authentication(UserID, Gender,Age,EstimatedSalary):
+def predict_note_authentication(Gender,Age,EstimatedSalary):
   output= model.predict(([[Gender,Age,EstimatedSalary]]))
   print("Purchased", output)
   if output==[1]:
@@ -45,7 +45,6 @@ def main():
 
     st.markdown(html_temp,unsafe_allow_html=True)
     st.header("Item Purchase Prediction")
-    UserID = st.text_input("UserID","")
     Gender = st.selectbox('Gender',('Male', 'Female'))
     if Gender == 'Male':
         Gender = 1
