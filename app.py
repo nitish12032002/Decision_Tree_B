@@ -54,7 +54,7 @@ def main():
     EstimatedSalary = st.number_input("Insert salary",15000,150000)
     resul=""
     if st.button("Predict"):
-      result=predict_note_authentication(UserID, Gender,Age,EstimatedSalary)
+      result=predict_note_authentication(Gender,Age,EstimatedSalary)
       st.success('Model has predicted {}'.format(result))
     if st.button("About"):
       st.subheader("Developed by Nitish Nama")
